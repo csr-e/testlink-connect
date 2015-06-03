@@ -1,7 +1,7 @@
 {
   "name": "testlink-connect",
-  "version": "0.1.2",
-  "description": "Connect to Testlink APIs through node",
+  "version": "0.2.0",
+  "description": "Connect to Testlink APIs through NodeJS",
   "dependencies": {
     "JSONPath": "*",
     "http": "*",
