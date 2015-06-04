@@ -1,5 +1,5 @@
-Forked from https://github.com/ChaitanyaQA/testlink-api-client
+# testlink-connect
 
-# TestLink Connect
+See the [wiki](https://github.com/mvndaai/testlink-connect/wiki) for help on use.
 
-UNDER CONSTRUCTION
+Report any problems to the [git repo](https://github.com/mvndaai/testlink-connect)
