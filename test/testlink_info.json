@@ -1,5 +1,16 @@
 {
-    "url":"",
-    "port":"",
-    "apiKey":""
+    "_comment_":"This account could be deleted if it is just create a new one.",
+    "url":"http://demo.testlink.org/latest", "port":"",
+    "xmlrpb":"/lib/api/xmlrpc/v1/xmlrpc.php",
+    "apiKey":"d8b60edcdca5a0a7bb5afeb2d00a2c1c",
+
+    "username":"testlinkconnect",
+    "userid":"15745",
+
+    "testProjectName":"testtest",
+    "testProjectId":"91393",
+    "testProjectPrefix":"-",
+    "testPlanName":"testtestplan",
+    "testPlanId":"91396"
+
 }

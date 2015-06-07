@@ -8,6 +8,9 @@
     "xmldom": "*",
     "xpath": "*"
   },
+  "devDependencies":{
+      "should": "*"
+  },
   "keywords": [
     "testlink","test","testlink-api","testlink-connect"
   ],
