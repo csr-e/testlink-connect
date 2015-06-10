@@ -22,20 +22,19 @@ describe("Generic Methods", function() {
     });
 
     it("getFullPath",function(done){
-        var obj = { nodeid: data.testcaseId};
+        var obj = { nodeid: data.testCaseId};
         tc.getFullPath(obj,function(callback){
             callback.length.should.not.equal(0);
             done();
         });
     });
-    //tc.getTestLinkVersion(function(callback){ console.log(callback); });
+
     it("getTestLinkVersion",function(done){
         tc.getTestLinkVersion(function(callback){
             callback.string.should.equal(data.testlinkVersion);
             done();
         });
     });
-
 
     /* Template
     it("method",function(done){

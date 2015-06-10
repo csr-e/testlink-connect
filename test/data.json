@@ -17,9 +17,9 @@
 
     "testSuiteId":"138904",
 
-    "testcaseName":"testlink-connect automation",
-    "testcaseSummary":"npm i testlink-connect",
-    "testcaseId":"138913",
+    "testCaseName":"testlink-connect automation",
+    "testCaseSummary":"npm i testlink-connect",
+    "testCaseId":"138913",
     "testCaseExternalId":"--31",
 
     "buildId":"2972"

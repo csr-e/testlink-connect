@@ -8,14 +8,13 @@ describe("Testcase Methods", function() {
 
     it("getTestCase - testcaseid",function(done){
         var obj = {
-            testcaseid:data.testcaseId
+            testcaseid:data.testCaseId
         };
         tc.getTestCase(obj,function(callback){
-            callback.struct.testcase_id.should.equal(data.testcaseId);
+            callback.struct.testcase_id.should.equal(data.testCaseId);
             done();
         });
     });
-
 
     it("getTestCase - testcaseexternalid",function(done){
         var obj = { "testcaseexternalid":data.testCaseExternalId };
@@ -25,19 +24,17 @@ describe("Testcase Methods", function() {
         });
     });
 
-
-
     it("createTestCase - block duplicate",function(done){
-        var msg = "There\'s already a Test Case with this title (" + data.testcaseName + ")";
+        var msg = "There\'s already a Test Case with this title (" + data.testCaseName + ")";
 
         this.timeout(25 * 1000);
         var obj = {
             testprojectid:data.testProjectId,
             testsuiteid:data.testSuiteId,
-            testcasename:data.testcaseName,
+            testcasename:data.testCaseName,
             authorlogin:data.username,
-            summary:data.testcaseSummary,
-            execution:0,
+            summary:data.testCaseSummary,
+            executiontype:2,
             checkduplicatedname:true,
             actiononduplicatedname:0
         };
@@ -53,7 +50,7 @@ describe("Testcase Methods", function() {
             user: data.username,
             testplanid: data.testPlanId,
             buildid: data.buildId,
-            testcaseid: data.testcaseId,
+            testcaseid: data.testCaseId,
             notes: "",
             status: "f"
         };
@@ -67,7 +64,7 @@ describe("Testcase Methods", function() {
     it("getLastExecutionResult - testcase id",function(done){
         var obj = {
             testplanid: data.testPlanId,
-            testcaseid: data.testcaseId
+            testcaseid: data.testCaseId
         };
         tc.getLastExecutionResult(obj,function(callback){
             callback.struct.status.should.equal("f");
@@ -104,14 +101,14 @@ describe("Testcase Methods", function() {
 
     it("getTestCaseIDByName",function(done){
         var obj = {
-            testcasename: data.testcaseName,
+            testcasename: data.testCaseName,
         };
         tc.getTestCaseIDByName(obj,function(callback){
-            callback.struct.id.should.equal(data.testcaseId);
+            callback.struct.id.should.equal(data.testCaseId);
             done();
         });
     });
 
-    
+
 
 });

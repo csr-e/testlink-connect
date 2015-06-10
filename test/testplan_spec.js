@@ -28,7 +28,7 @@ describe("Testplan Methods", function() {
     it("getTestCasesForTestPlan",function(done){
         var obj = { "testplanid":data.testPlanId };
         tc.getTestCasesForTestPlan(obj,function(callback){
-            callback.struct.tcase_name.should.equal(data.testcaseName);
+            callback.struct.tcase_name.should.equal(data.testCaseName);
             done();
         });
     });
@@ -37,7 +37,7 @@ describe("Testplan Methods", function() {
         var obj = {
             testprojectid:data.testProjectId,
             testplanid:data.testPlanId,
-            testcaseid: data.testcaseId,
+            testcaseid: data.testCaseId,
             version:1,
         };
         tc.addTestCaseToTestPlan(obj,function(callback){
