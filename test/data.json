@@ -3,6 +3,7 @@
     "url":"http://demo.testlink.org/latest", "port":"",
     "xmlrpb":"/lib/api/xmlrpc/v1/xmlrpc.php",
     "apiKey":"d8b60edcdca5a0a7bb5afeb2d00a2c1c",
+    "testlinkVersion":"1.9.13",
 
     "username":"testlinkconnect",
     "userid":"15745",
@@ -10,7 +11,16 @@
     "testProjectName":"testtest",
     "testProjectId":"91393",
     "testProjectPrefix":"-",
-    "testPlanName":"testtestplan",
-    "testPlanId":"91396"
 
+    "testPlanName":"testlink-connect",
+    "testPlanId":"138915",
+
+    "testSuiteId":"138904",
+
+    "testcaseName":"testlink-connect automation",
+    "testcaseSummary":"npm i testlink-connect",
+    "testcaseId":"138913",
+    "testCaseExternalId":"--31",
+
+    "buildId":"2972"
 }

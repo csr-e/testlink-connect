@@ -25,6 +25,26 @@ describe("Testplan Methods", function() {
         });
     });
 
+    it("getTestCasesForTestPlan",function(done){
+        var obj = { "testplanid":data.testPlanId };
+        tc.getTestCasesForTestPlan(obj,function(callback){
+            callback.struct.tcase_name.should.equal(data.testcaseName);
+            done();
+        });
+    });
 
+    it("addTestCaseToTestPlan",function(done){
+        var obj = {
+            testprojectid:data.testProjectId,
+            testplanid:data.testPlanId,
+            testcaseid: data.testcaseId,
+            version:1,
+        };
+        tc.addTestCaseToTestPlan(obj,function(callback){
+            //console.log(callback);
+            callback.struct.operation.should.equal("addTestCaseToTestPlan");
+            done();
+        });
+    });
 
 });

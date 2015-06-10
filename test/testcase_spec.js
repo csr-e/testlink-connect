@@ -5,53 +5,113 @@ var url = data.url + (data.port !== "" ? ":"+ data.port : "") + data.xmlrpb;
 var tc = new TestlinkConnect(data.apiKey, url);
 
 describe("Testcase Methods", function() {
-    /* Template
-    it("method",function(done){
-        var obj = {};
-        tc.method(obj,function(callback){
-            console.log(callback);
-            done();
-        });
-    });
-    */
 
     it("getTestCase - testcaseid",function(done){
-        var obj = { testcaseid:"115885" }; //TODO Update data file
+        var obj = {
+            testcaseid:data.testcaseId
+        };
         tc.getTestCase(obj,function(callback){
-//            console.log(callback);
+            callback.struct.testcase_id.should.equal(data.testcaseId);
             done();
         });
     });
+
 
     it("getTestCase - testcaseexternalid",function(done){
-        var obj = { testcaseexternalid:"--1" }; //TODO Update data file
+        var obj = { "testcaseexternalid":data.testCaseExternalId };
         tc.getTestCase(obj,function(callback){
-            //console.log(callback);
+            callback.struct.full_tc_external_id.should.equal(data.testCaseExternalId);
             done();
         });
     });
 
 
-    it("createTestCase -block duplicate",function(done){
-        //done();//Not working as planned yet
+
+    it("createTestCase - block duplicate",function(done){
+        var msg = "There\'s already a Test Case with this title (" + data.testcaseName + ")";
+
         this.timeout(25 * 1000);
         var obj = {
             testprojectid:data.testProjectId,
-            testsuiteid:"115884", //TODO Update data file
-            testcasename:"Jason Test Create 2",
+            testsuiteid:data.testSuiteId,
+            testcasename:data.testcaseName,
             authorlogin:data.username,
-            summary:"Test that creating testcase work",
-            execution:0
-            //checkduplicatedname:true,
-            //actiononduplicatedname:0
+            summary:data.testcaseSummary,
+            execution:0,
+            checkduplicatedname:true,
+            actiononduplicatedname:0
         };
         tc.createTestCase(obj,function(callback){
-            //console.log(callback);
+            callback.struct._additionalInfo.msg.should.equal(msg);
             done();
         });
     });
 
 
+    it("reportTCResult - tescase id",function(done){
+        var obj = {
+            user: data.username,
+            testplanid: data.testPlanId,
+            buildid: data.buildId,
+            testcaseid: data.testcaseId,
+            notes: "",
+            status: "f"
+        };
+        tc.reportTCResult(obj,function(callback){
+            callback.struct.message.should.equal("Success!");
+            done();
+        });
+    });
 
+
+    it("getLastExecutionResult - testcase id",function(done){
+        var obj = {
+            testplanid: data.testPlanId,
+            testcaseid: data.testcaseId
+        };
+        tc.getLastExecutionResult(obj,function(callback){
+            callback.struct.status.should.equal("f");
+            done();
+        });
+    });
+
+    it("reportTCResult - testcase external id",function(done){
+        var obj = {
+            user: data.username,
+            testplanid: data.testPlanId,
+            buildid: data.buildId,
+            testcaseexternalid:data.testCaseExternalId,
+            notes: "",
+            status: "p",
+            overwrite: "true"
+        };
+        tc.reportTCResult(obj,function(callback){
+            callback.struct.message.should.equal("Success!");
+            done();
+        });
+    });
+
+    it("getLastExecutionResult - testcase external id",function(done){
+        var obj = {
+            testplanid: data.testPlanId,
+            testcaseexternalid:data.testCaseExternalId,
+        };
+        tc.getLastExecutionResult(obj,function(callback){
+            callback.struct.status.should.equal("p");
+            done();
+        });
+    });
+
+    it("getTestCaseIDByName",function(done){
+        var obj = {
+            testcasename: data.testcaseName,
+        };
+        tc.getTestCaseIDByName(obj,function(callback){
+            callback.struct.id.should.equal(data.testcaseId);
+            done();
+        });
+    });
+
+    
 
 });
