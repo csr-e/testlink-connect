@@ -20,7 +20,11 @@ describe("Testplan Methods", function() {
     it("getBuildsForTestPlan",function(done){
         var obj = { "testplanid":data.testPlanId };
         tc.getBuildsForTestPlan(obj,function(callback){
-            callback.length.should.not.equal(0);
+            if( Object.prototype.toString.call( callback ) === '[object Array]' ) {
+                callback.length.should.not.equal(0);
+            }else{
+                callback.should.not.equal(null);
+            }
             done();
         });
     });

@@ -13,7 +13,7 @@
     "testProjectPrefix":"-",
 
     "testPlanName":"testlink-connect",
-    "testPlanId":"138915",
+    "testPlanId":"152287",
 
     "testSuiteId":"138904",
 
@@ -22,5 +22,5 @@
     "testCaseId":"138913",
     "testCaseExternalId":"--31",
 
-    "buildId":"2972"
+    "buildId":"3087"
 }
