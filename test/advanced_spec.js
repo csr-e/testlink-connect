@@ -13,7 +13,6 @@ describe("Advanced Functionality", function() {
             testprojectid:data.testProjectId,
             testsuiteid:data.testSuiteId,
             testplanid:data.testPlanId,
-            buildid: data.buildId,
             testcasename:"Advanced",
             authorlogin:data.username,
             summary:"This should be created and pass all at once.",
