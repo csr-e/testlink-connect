@@ -4,15 +4,31 @@
   "description": "Connect to Testlink APIs through NodeJS",
   "dependencies": {
     "JSONPath": "*",
+    "jasmine": "^2.5.3",
+    "request": "^2.80.0",
     "simpleconvert-xml": "*",
     "xmldom": "*",
     "xpath": "*"
   },
-  "devDependencies":{
-      "should": "*"
+  "devDependencies": {
+    "JSONPath": "^0.11.2",
+    "gulp": "^3.9.1",
+    "jasmine": "^2.5.3",
+    "jasmine-node": "^1.14.5",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "require": "^2.4.20",
+    "should": "^11.2.1",
+    "simpleconvert-xml": "^1.0.0",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.23"
   },
   "keywords": [
-    "testlink","test","testlink-api","testlink-connect"
+    "testlink",
+    "test",
+    "testlink-api",
+    "testlink-connect"
   ],
   "author": "Jason Mavandi",
   "contributors": [
@@ -26,7 +42,7 @@
       "name": "Jason Mavandi"
     }
   ],
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/mvndaai/testlink-connect"
   },

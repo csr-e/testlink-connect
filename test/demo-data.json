@@ -1,9 +1,9 @@
 {
     "_comment_":"This account could be deleted if it is just create a new one.",
-    "url":"http://testlink.amplia.es", "port":"",
+    "url":"http://demo.testlink.org/latest", "port":"",
     "xmlrpb":"/lib/api/xmlrpc/v1/xmlrpc.php",
-    "apiKey":"91bcc34b534db82a4d653c1c78bcd2ab",
-    "testlinkVersion":"1.9.9",
+    "apiKey":"d8b60edcdca5a0a7bb5afeb2d00a2c1c",
+    "testlinkVersion":"1.9.14",
 
     "username":"testlinkconnect",
     "userid":"15745",
@@ -19,7 +19,7 @@
 
     "testCaseName":"testlink-connect automation",
     "testCaseSummary":"npm i testlink-connect",
-    "testCaseId":"oguxw-52",
+    "testCaseId":"138913",
     "testCaseExternalId":"--31",
 
     "buildId":"3087"

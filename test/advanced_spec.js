@@ -8,7 +8,7 @@ var tc = new TestlinkConnect(data.apiKey, url);
 describe("Advanced Functionality", function() {
 
     it("createTestCaseThenReport",function(done){
-        this.timeout(10 * 1000);
+        //this.timeout(10 * 1000);
         var obj = {
             testprojectid:data.testProjectId,
             testsuiteid:data.testSuiteId,

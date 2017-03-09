@@ -7,8 +7,9 @@ var tc = new TestlinkConnect(data.apiKey, url);
 describe("Generic Methods", function() {
 
     it("about",function(done){
-        tc.about(function(callback){
-            callback.string.should.not.equal(null);
+        tc.about(function(resp){
+            CheckOkResponse(resp, "");
+            resp.string.should.not.equal(null);
             done();
         });
     });
@@ -23,15 +24,17 @@ describe("Generic Methods", function() {
 
     it("getFullPath",function(done){
         var obj = { nodeid: data.testCaseId};
-        tc.getFullPath(obj,function(callback){
-            callback.length.should.not.equal(0);
+        tc.getFullPath(obj,function(resp){
+            CheckOkResponse(resp, "");
+            should.notEqual(resp.length, undefined, "Void response not expected from TestLink");
+            resp.length.should.not.equal(0);
             done();
         });
     });
 
     it("getTestLinkVersion",function(done){
-        tc.getTestLinkVersion(function(callback){
-            callback.string.should.equal(data.testlinkVersion);
+        tc.getTestLinkVersion(function(resp){
+            resp.string.should.equal(data.testlinkVersion);
             done();
         });
     });
@@ -45,4 +48,13 @@ describe("Generic Methods", function() {
         });
     });
     */
+
+    function CheckOkResponse(data, hint) {
+        should.notEqual(data, null, "Not response received by testlink");
+        if (data.struct && data.struct.code) {
+            var hintText = hint ? ". Hint: " + hint : "";
+            should.fail(0,0, "ERR MSG: [" + data.struct.message + "] - " + hintText);
+         }
+    }
+
 });
